@@ -1,0 +1,14 @@
+# Salesforce Playgorund - 1  Org Properties
+org1:
+  username: ""
+  password: ""
+  security_token: ""
+
+# Salesforce Playgorund - 2  Org Properties
+org2:
+  username: ""
+  password: ""
+  security_token: ""
+  
+http:
+  port: "8081"

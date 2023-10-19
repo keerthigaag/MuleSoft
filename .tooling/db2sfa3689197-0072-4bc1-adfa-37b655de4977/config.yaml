@@ -1,0 +1,10 @@
+salesforce:
+  username: ""
+  password: ""
+  
+http:
+  port: ""
+  
+dynamodb:
+  accesskey: ""
+  secretkey: ""
