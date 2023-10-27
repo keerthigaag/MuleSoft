@@ -15,7 +15,7 @@ http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mu
   </dynamodb:config>
   <configuration-properties doc:name="Configuration properties" doc:id="2f73ede8-2d61-4287-b94f-551bfa7783b3" file="config.yaml" />
   <salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="aeb819e7-3670-4d3e-a0ab-4ed85295904a" >
-    <salesforce:basic-connection username="k.allu.ganeshbabu@wise-koala-4148x1.com" password="Ohm$hivayanama1" />
+    <salesforce:basic-connection username="${salesforce.username}" password="${salesforce.password}" />
   </salesforce:sfdc-config>
 	<flow name="dbMainPage" doc:id="f8fa6400-4767-4dbc-a484-89b3d7fc27fc" >
     <http:listener doc:name="Listener" doc:id="30e22851-c066-4971-8e8d-bdfae658ca91" config-ref="HTTP_Listener_config" path="/">

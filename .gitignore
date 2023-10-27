@@ -1,1 +1,8 @@
 /.metadata/
+/.mule/
+/.tooling/
+/.tooling-apps-cache/
+/.db2sf/
+/.sf2sf/
+/.sfupsert/
+/.gitignore/

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f0a7e6c4-e356-460b-815a-3dbfdd5f039a" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="d18ae394-d9ec-4aa8-895f-b444a0ee8da8" >
+		<salesforce:basic-connection password="Ohm$hivayanama1" username="k.allu.ganeshbabu@accenture.com" securityToken="dH8FjSKEZnKq6u545YMBQKnL"/>
+	</salesforce:sfdc-config>
+	<salesforce:sfdc-config name="Salesforce_Config1" doc:name="Salesforce Config" doc:id="ae95edde-26cf-470d-9820-39f51d350aca" >
+		<salesforce:basic-connection username="k.allu.ganeshbabu@accenture.com" password="Ohm$hivayanama1" securityToken="dH8FjSKEZnKq6u545YMBQKnL" />
+	</salesforce:sfdc-config>
+	<flow name="sfupsertFlow1" doc:id="ce4c529b-9ced-46ba-8b34-e088135f0ade" >
+	</flow>
+	<flow name="sfupsertFlow" doc:id="d470718b-b69b-411c-be08-71134772c8d8">
+		<http:listener doc:name="Listener" doc:id="bacfc8a4-e963-42ac-a6ad-13f69d5045df" config-ref="HTTP_Listener_config" path="/upsert" />
+		<salesforce:create-job-bulk-api-v2 doc:name="Create job bulk api v 2" doc:id="8b7bef45-acba-441b-a387-eba1ae6bda51" config-ref="Salesforce_Config1" objectType="Account" operation="insert" lineEnding="CRLF"/>
+	</flow>
+</mule>
